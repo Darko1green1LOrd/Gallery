@@ -1,0 +1,13 @@
+{% load static %}
+<h1>Add Album</h1>
+<form method='POST' action="" enctype="multipart/form-data" class="add-alb editor-form">
+    {% csrf_token %}
+
+    <div class="name-inp">
+        <label>Name</label>
+        <input required name="name" type="text" placeholder="Enter Album Name" maxlength="50">
+    </div>
+
+    <button type='submit'>Add</button>
+
+</form>

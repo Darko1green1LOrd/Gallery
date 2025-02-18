@@ -1,0 +1,26 @@
+{% load static %}
+<h1>Add Photos to</h1>
+<h1 class="galname">{{galname}}</h1>
+<form method='POST' action="" enctype="multipart/form-data" class="add-alb editor-form">
+    {% csrf_token %}
+
+    <div class="foto-date">
+        <label>Photos Date</label>
+        <input required name="date" type="date" class="form-control-date">
+    </div>
+    <label for="images" class="drop-container" id="fotos">
+        <span class="drop-title">Drop Photos here</span>
+        or
+        <input required id="images" name="images" type="file" accept="image/*" excludeAcceptAllOption=true multiple class="form-control-file">
+    </label>
+
+    <button type='submit'>Add</button>
+
+</form>
+
+<script src="{% static 'scripts/file-form.js' %}"></script>
+<script>
+    jQuery(document).ready(function($) {
+        $(".form-control-date")[0].value = new Date().toISOString().split('T')[0];
+    });
+</script>

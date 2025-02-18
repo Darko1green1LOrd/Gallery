@@ -1,0 +1,98 @@
+{% load static %}
+<div class="bottom-panel{% if onpage == 6%} selmode{% endif %}">
+    {% if onpage == 1 %}
+        <div id=auth_texts>
+            <div align="center" class="LoginText"><h1>Login</h1></div>
+        </div>
+        <form action="" method=POST id="loginfield">
+            {% csrf_token %}
+                <div>
+                    <a>Username:</a>
+                    <input type="text" name="username" value="" id="usernameTxt">
+                </div>
+                <div>
+                    <a>Password:</a>
+                    <input type="password" name="password">
+                </div>
+            <input type="submit" value="Log In">
+        </form>
+    {% elif onpage == 2 %}
+        <div id=auth_texts>
+            <div align="center" class="LoginText"><h1>Logout</h1></div>
+        </div>
+        <form action="" method=POST id="loginfield">
+            {% csrf_token %}
+            <p>Are you sure?</p>
+            <input type="submit" value="Yes, Logout">
+        </form>
+    {% elif onpage == 4 %}
+        <div id=add-album>
+            {% include 'Galmain/snippets/add_album.html' %}
+        </div>
+    {% elif onpage == 5 %}
+        <div id=add-album-imgs>
+            {% include 'Galmain/snippets/add_images.html' %}
+        </div>
+    {% else %}
+        {% if onpage == 6%}
+            {% if isgal %}
+                <h1>Click on photo to select it or deselect it.</h1>
+            {% else %}
+                <h1>Click on album to select it or deselect it.</h1>
+            {% endif%}
+        {% endif %}
+        {% if isgal%}
+        <div id=album-images>
+            {% include 'Galmain/snippets/create_albumimgs.html' %}
+        </div>
+        {% else %}
+        <div id=albums>
+            {% include 'Galmain/snippets/create_album.html' %}
+        </div>
+        {% endif %}
+        {% if onpage == 6%}
+            <form method='POST' action="" enctype="multipart/form-data" class="add-alb editor-form sel-form">
+                {% csrf_token %}
+
+                {% if isgal %}
+                    {% if showdate %}
+                        <div class="foto-date">
+                            <label>Photos Date</label>
+                            <input required name="date" type="date" class="form-control-date">
+                        </div>
+                    {% endif %}
+                    {% if all_albums%}
+                        <div class="album-sel">
+                            <label>Album Selection</label>
+                            <select name="album" class="form-control">
+                                <option value='none'>Select Album...</option>
+                                {% for album in all_albums %}
+                                <option value='{{album}}'>{{album}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    {% endif %}
+                {% endif %}
+
+                <div class="all_items hidden">
+                </div>
+
+                <div class="doit">
+                    <button class="delbtn preconfirm" type='button' disabled>Delete</button>
+                </div>
+
+                <div class="confirm hidden">
+                    <a>Delete 0 Photos and 0 Albums ?</a>
+                    <button class="delbtn" type='submit'>Yes</button>
+                </div>
+
+            </form>
+            {% if isgal %}
+            <script src="{% static 'scripts/photo_elemselector.js' %}"></script>
+            {% else %}
+            <script src="{% static 'scripts/elemselector.js' %}"></script>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+</div>

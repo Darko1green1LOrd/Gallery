@@ -1,0 +1,24 @@
+{% load static %}
+<div class="toppanel">
+    <h1>
+        <a class="photos-albumTitle" href="{% url 'MainPage' %}" style="cursor:pointer;color:inherit;">
+            <i class="material-icons arrow-back" alt="">arrow_back</i>
+        </a>
+        {{album_data.name}}
+   </h1>
+</div>
+<div class="toppanel-controls">
+    <a class="photos-button photos-button-download" download title="Download Image">
+        <i class="material-icons">cloud_download</i>
+    </a><a class="photos-button photos-button-fullScreen" title="Toggle Fullscreen">
+        <i class="material-icons startIcon">fullscreen</i>
+        <i class="material-icons exitIcon">fullscreen_exit</i>
+    </a><a class="photos-button photos-button-play" title="Toggle autoplay">
+        <i class="material-icons playIcon">play_arrow</i><i class="material-icons pauseIcon">pause</i>
+    <a class="photos-button photos-button-close" href="{% url 'MainPage' %}" title="Close">
+        <i class="material-icons">close</i>
+    </a>
+    </a>{% if is_editor %}<a class="photos-button photos-button-edit" href="{% url 'EditAlbum' galid%}" title="Edit">
+        <i class="material-icons">settings_heart</i>
+    </a>{% endif %}
+</div>

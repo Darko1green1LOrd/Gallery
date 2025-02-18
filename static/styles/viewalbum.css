@@ -1,0 +1,422 @@
+:root {
+    --bgcolor: black;
+    --secondarycolor: #fff;
+    --thircolor: #000;
+    --textcolor: rgba(255,255,255,0.6);
+    --defaulttc: #364656;
+    --toppanel-hovc: rgba(255,255,255,0.2);
+    --photocontainer: rgba(10,10,10,0.6);
+    --photocontainer-hovc: rgba(255,255,255,0.6);
+    --titlerowc: rgba(255,255,255,0.2);
+    --photolistc: rgba(255,255,255,0.1);
+    --titlecol: rgba(0,0,0,0.6);
+    --bodytcol: #2f2f2f;
+    --messagebox-c: rgba(10,10,10,0.7);
+}
+
+
+
+/*
+-------
+Main stuff
+-------
+*/
+
+body {
+    background: var(--bgcolor);
+    color: var(--bodytcol);
+    font-size: 13px;
+    font-weight: 400;
+    font-family: 'Tahoma';
+    -webkit-text-size-adjust: 100%;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Arial, sans-serif;
+    margin: 0 0 0.5em 0;
+    color: var(--defaulttc);
+    font-weight: 100;
+    line-height: 1.25;rgba(255,255,255,0.2)
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, p, blockquote {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*
+-------
+Top Panel
+-------
+*/
+
+.arrow-back {
+    float: left;
+    margin-right: 10px;
+    font-size: 32px !important;
+    opacity: 0.7;
+}
+
+.toppanel {
+    color: var(--secondarycolor);
+    padding: 8px;
+    min-height: 48px;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--toppanel-hovc);
+    position: relative;
+    clear: both;
+    padding-left: 5px;
+}
+
+.toppanel > h1 {
+    color: inherit;
+    margin: 0;
+    display: block;
+    padding: 0;
+    font-size: 20px;
+    color: var(--textcolor);
+    line-height: 32px;
+    font-weight: normal;
+}
+
+.toppanel-controls {
+    padding: 0px;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    z-index: 1;
+}
+
+.toppanel-controls .photos-button {
+    cursor: pointer;
+    display: inline-block;
+    color: var(--secondarycolor);
+    width: 28px;
+    height: 28px;
+    opacity: 0.5;
+    padding: 10px;
+    margin-left: 5px;
+    -webkit-transition: all .1s linear;
+    -moz-transition: all .1s linear;
+    -ms-transition: all .1s linear;
+    -o-transition: all .1s linear;
+    transition: all .1s linear;
+}
+
+.toppanel-controls .photos-button i {
+    font-size: 28px;
+}
+
+.exitIcon, .pauseIcon {
+    display: none !important;
+}
+
+.toppanel-controls .photos-button:hover {
+    opacity: 1;
+    background-color: var(--toppanel-hovc);
+}
+
+.albumdisplay .photos-button-play.pause .pauseIcon {
+    display: inline-block !important;
+}
+
+.albumdisplay .photos-button-play.pause .playIcon {
+    display: none;
+}
+
+.albumdisplay .photos-button-fullScreen.fullScreen .startIcon {
+    display: none;
+}
+
+.albumdisplay .photos-button-fullScreen.fullScreen .exitIcon {
+    display: inline-block !important;
+}
+
+
+/*
+-------
+Center
+-------
+*/
+
+.albumdisplay > .photos-photo-container {
+    text-align: center;
+    position: relative;
+    height: 480px;
+    overflow: hidden;
+}
+
+.albumdisplay .photos-titleRow {
+    color: var(--secondarycolor);
+    padding: 8px;
+    min-height: 48px;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--titlerowc);
+    position: relative;
+    clear: both;
+    padding-left: 5px;
+}
+
+.albumdisplay > .photos-photo-container > .photos-photo-1 {
+    display: block;
+    position: absolute;
+    text-align: center;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.albumdisplay > .photos-photo-container > .photos-photo-2 {
+    display: none;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+}
+
+.albumdisplay > .photos-photo-container > .photos-photo-title {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    max-width: 100%;
+    width: auto;
+    background-color: var(--titlecol);
+    text-align: left;
+    font-size: 14px;
+    min-height: 30px;
+    font-size: 13px;
+}
+
+.albumdisplay > .photos-photo-container > .photos-photo-title {
+    text-align: left;
+    font-size: 14px;
+    font-size: 13px;
+}
+
+.albumdisplay .photos-photo-container:hover .photos-controls, .albumdisplay.hovered .photos-controls {
+    opacity: 1;
+}
+
+.albumdisplay > .photos-photo-container > .photos-photo-title > div {
+    padding: 10px;
+    position: relative;
+}
+
+.albumdisplay .photos-titleRow span {
+    opacity: 0.6;
+}
+
+.photos-photo-title > div > .photos-photo-title-info {
+    display: inline-block;
+}
+
+.albumdisplay .photos-titleRow span {
+    opacity: 0.6;
+}
+
+.albumdisplay .photos-controls {
+    opacity: 0;
+    -webkit-transition: all .25s linear;
+    -moz-transition: all .25s linear;
+    -ms-transition: all .25s linear;
+    -o-transition: all .25s linear;
+    transition: all .25s linear;
+}
+
+.photos-photoList, .photos-photo-container, .photos-photoNav-left, .photos-photoNav-right {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.albumdisplay > .photos-photo-container > .photos-photoNav-left > div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    cursor: pointer;
+}
+
+.albumdisplay .photos-controls {
+    opacity: 0;
+    -webkit-transition: all .25s linear;
+    -moz-transition: all .25s linear;
+    -ms-transition: all .25s linear;
+    -o-transition: all .25s linear;
+    transition: all .25s linear;
+}
+
+.albumdisplay > .photos-photo-container > .photos-photoNav-left > div i {
+    left: 0;
+}
+
+.albumdisplay > .photos-photo-container > .photos-photoNav-right > div i {
+    right: 0;
+}
+
+.albumdisplay > .photos-photo-container > .photos-photoNav-left > div i, .albumdisplay > .photos-photo-container > .photos-photoNav-right > div i {
+    font-size: 50px;
+    opacity: 0.5;
+    position: absolute;
+    top: calc(50% - 25px);
+}
+
+.albumdisplay .photos-titleRow {
+    color: var(--secondarycolor);
+}
+
+.albumdisplay > .photos-photo-container > .photos-photoNav-left:hover > div i, .albumdisplay > .photos-photo-container > .photos-photoNav-right:hover > div i {
+    opacity: 1;
+}
+
+.albumdisplay > .photos-photo-container > .photos-photoNav-right > div {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    cursor: pointer;
+}
+
+.albumdisplay .photos-messagebox {
+    display: none;
+    position: absolute;
+    text-align: center;
+    top: 48%;
+    left: 0;
+    right: 0;
+}
+
+.albumdisplay .photos-messagebox span {
+    display: inline-block;
+    padding: 10px;
+    min-width: 48px;
+    min-height: 48px;
+    background-color: var(--messagebox-c);
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: var(--secondarycolor);
+}
+
+.loading-background {
+    background-image: url('/media/assets/loader_b.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 50px;
+}
+
+/*
+-------
+Bottom Panel
+-------
+*/
+
+.albumdisplay {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--thircolor);
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: var(--secondarycolor);
+}
+
+.photos-photoList {
+    height: 124px;
+    padding: 5px 10px;
+    background-color: var(--photolistc);
+}
+
+.albumdisplay > .photos-photoList > .photos-photoList-la, .albumdisplay > .photos-photoList > .photos-photoList-ra {
+    height: 30px;
+    margin: 35px 0px;
+    width: 30px;
+    cursor: pointer;
+    position: relative;
+}
+
+.albumdisplay > .photos-photoList > .photos-photoList-la {
+    float: left;
+}
+
+.albumdisplay > .photos-photoList > .photos-photoList-ra {
+    float: right;
+}
+
+.albumdisplay > .photos-photoList > .photos-photoList-la i, .albumdisplay > .photos-photoList > .photos-photoList-ra i {
+    font-size: 25px;
+    position: absolute;
+    top: 50%;
+    top: calc(50% - 12px);
+    opacity: 0.5;
+    color: var(--secondarycolor);
+}
+
+.albumdisplay > .photos-photoList > .photos-photoList-la:hover i, .albumdisplay > .photos-photoList > .photos-photoList-ra:hover i {
+    opacity: 1;
+}
+
+.albumdisplay > .photos-photoList > .photos-photoList-container {
+    margin: 0px 36px;
+    height: 108px;
+    overflow: hidden;
+    position: relative;
+}
+
+.albumdisplay > .photos-photoList > .photos-photoList-container > .photos-photoList-scroller {
+    white-space: nowrap;
+    position: relative;
+    left: 0px;
+}
+
+.albumdisplay > .photos-photoList > .photos-photoList-container > .photos-photoList-scroller > div.photos-photoThumb {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    margin: 4px 4px;
+    height: 100px;
+    -moz-box-shadow: 1px 1px 4px var(--photocontainer);
+    -webkit-box-shadow: 1px 1px 4px var(--photocontainer);
+    box-shadow: 1px 1px 4px var(--photocontainer);
+}
+
+.albumdisplay > .photos-photoList > .photos-photoList-container > .photos-photoList-scroller > div.photos-photoThumb > img {
+    height: 100px;
+    width: 100px;
+}
+
+.albumdisplay > .photos-photoList > .photos-photoList-container > .photos-photoList-scroller > div.photos-photoThumb > div {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100px;
+    height: 100px;
+}
+
+.albumdisplay > .photos-photoList > .photos-photoList-container > .photos-photoList-scroller > div.photos-photoThumb:hover > div {
+    width: 92px;
+    height: 92px;
+    border: 4px solid var(--photocontainer-hovc);
+}
+
+.albumdisplay > .photos-photoList > .photos-photoList-container > .photos-photoList-scroller > div.photos-photoThumb.selected > div {
+    width: 80px;
+    height: 80px;
+    border: 10px solid var(--photocontainer-hovc);
+}

@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Gallery</title>
+        <script type="text/javascript" src="{% static 'scripts/jquery-3.7.1.min.js' %}" type="text/javascript"></script>
+        <script type="text/javascript" src="{% static 'scripts/jquery-ui.min.js' %}" type="text/javascript"></script>
+        <script type="text/javascript" src="{% static 'scripts/jquery-migrate-3.0.0.min.js' %}"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'styles/jquery-ui.min.css' %}" />
+        <link rel="icon" type="image/png" href="{% static '/icons/favicon-48x48.png' %}" sizes="48x48" />
+        <link rel="icon" type="image/svg+xml" href="{% static '/icons/favicon.svg' %}" />
+        <link rel="shortcut icon" href="{% static '/icons/favicon.ico' %}" />
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static '/icons/apple-touch-icon.png' %}" />
+        <meta name="apple-mobile-web-app-title" content="Gallery" />
+        <link rel="manifest" href="{% static '/icons/site.webmanifest' %}" />
+        <script src="{% static 'scripts/main.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <head>
+    <body>
+        <div class="main-panel">
+            {% block content %}
+
+            {% endblock content %}
+        </div>
+    </body>
+</html>

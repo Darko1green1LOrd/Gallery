@@ -1,0 +1,39 @@
+{% load static %}
+{% for key, value in album_data.items%}
+    {% if key == "images" %}
+        <div class="album_imgs">
+            {% for each in value %}
+                <a>
+                    <div class="img_disp" data-imgn="{{each.img}}">
+                        <p>{{each.created_at}}</p>
+                        <img class="img_showcase" src="{{each.img.url}}">
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    {% elif key == "photoamount" %}
+        <p>Photos: {{value}}</p>
+    {% elif key == "name" %}
+        {% if namedit %}
+        <form method='POST' action="" enctype="multipart/form-data" class="add-alb editor-form">
+            {% csrf_token %}
+
+            <div class="name-inp">
+                <label>Názov</label>
+                <input required name="name" type="text" placeholder="Enter Album Name" maxlength="50" value="{{value}}">
+            </div>
+
+            <button type='submit'>Change</button>
+
+        </form>
+        {% else %}
+        <p>{{value}}</p>
+        {% endif %}
+    {% else %}
+        <p>{{value}}</p>
+    {% endif %}
+{% endfor %}
+{% if not album_data.images and onpage == 3 and isgal%}
+    <div id="bigtext"><p>No photos yet.</p></div>
+{% endif %}
+

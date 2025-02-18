@@ -1,0 +1,14 @@
+{% load custom_filters%}
+{% if messages %}
+    {% for message in messages %}
+        <label>
+            <input type="checkbox" class="alertCheckbox" autocomplete="off" />
+            <div class="alert {{message|split:'MSGSPLITTER'|ind:0}}">
+                <span class="alertClose">X</span>
+                <span class="alertText">{{message|split:'MSGSPLITTER'|ind:1}}
+                    <br class="clear"/>
+                </span>
+            </div>
+        </label>
+    {% endfor %}
+{% endif %}

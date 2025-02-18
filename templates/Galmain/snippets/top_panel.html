@@ -1,0 +1,72 @@
+{% load static %}
+<div class="top-panel">
+    <div class="logo-panel">
+        <a href="https://link.topage.com/">
+            <div>
+                <img src="{% static 'icons/logo.png' %}" alt="" id="site-logo" style="max-height:97px;float:left;">
+                <span class="logo-text">NameOfPlace<br>Adress<br>City</span>
+            </div>
+        </a>
+    </div>
+    <ul class="btnsone-panel">
+        <div>
+            {% if not user.is_authenticated %}
+                <li class="login-btn{% if onpage == 1 %} sel{% endif %}">
+                    <a{% if onpage == 0 or onpage == 3 or onpage == 4 or onpage == 5 %} href="{% url 'Login' %}"{% endif %} title="Login">Login</a>
+                </li>
+            {% else %}
+                <a id="logged-user">{{user.get_username}}</a>
+                <li class="logout-btn{% if onpage == 2 %} sel{% endif %}">
+                    <a{% if onpage == 0 or onpage == 3 or onpage == 4 or onpage == 5 %} href="{% url 'Logout' %}"{% endif %} title="Logout">Logout</a>
+                </li>
+            {% endif %}
+        </div>
+    </ul>
+    <div id="selectormenu">
+        <ul>
+            {% if onpage == 1 or onpage == 2%}
+                <li><a href="{% url 'MainPage' %}"><div>Main Menu</div></a></li>
+            {% endif %}
+            {% if onpage == 0 and albums_data.items|length > 0%}
+                <li><a href="{% url 'ViewAlbum' 'random' %}"><div>Random View</div></a></li>
+            {% endif %}
+            {% if is_editor%}
+                    {% if onpage == 4 or onpage == 6%}
+                        {% if isgal %}
+                            <li><a href="{% url 'EditAlbum' galid %}"><div>Cancel</div></a></li>
+                        {% else %}
+                            <li><a href="{% url 'EditPage' %}"><div>Cancel</div></a></li>
+                        {% endif %}
+                    {% elif onpage == 5 %}
+                        <li><a href="{% url 'EditAlbum' galid %}"><div>Cancel</div></a></li>
+                    {% else %}
+                        {% if isgal %}
+                            {% if album_data.images %}
+                                <li{% if onpage == 0 %} class="selected"{% endif %}><a{% if onpage == 3 %} href="{% url 'ViewAlbum' galid%}"{% endif %}><div>View</div></a></li>
+                            {% endif %}
+                            <li{% if onpage == 3 %} class="selected"{% endif %}><a{% if onpage == 0 %} href="{% url 'EditAlbum' galid%}"{% endif %}><div>Edit</div></a></li>
+                        {% else %}
+                            <li{% if onpage == 0 %} class="selected"{% endif %}><a{% if onpage == 3 %} href="{% url 'MainPage' %}"{% endif %}><div>View</div></a></li>
+                            <li{% if onpage == 3 %} class="selected"{% endif %}><a{% if onpage == 0 %} href="{% url 'EditPage' %}"{% endif %}><div>Edit</div></a></li>
+                        {% endif %}
+
+                        {% if onpage == 3 and not isgal %}
+                            <li><a href="{% url 'AddAlbum' %}"><div>Add Album</div></a></li>
+                            <li><a href="{% url 'DelAlbum' %}"><div>Delete Album</div></a></li>
+                        {% elif onpage == 3 and isgal %}
+                            <li><a href="{% url 'AddAlbumFiles' galid%}"><div>Add Photos</div></a></li>
+                            {% if album_data.images %}
+                                <li><a href="{% url 'DeleteAlbumFiles' galid%}"><div>Delete Photos</div></a></li>
+                                <li><a href="{% url 'MoveAlbumFiles' galid%}"><div>Move Photos</div></a></li>
+                                <li><a href="{% url 'ChangeDateAlbumFiles' galid%}"><div>Edit Dates</div></a></li>
+                            {% endif %}
+                        {% endif %}
+
+                        {% if isgal %}
+                            <li><a href="{% if onpage == 0 %}{% url 'MainPage' %}{% else %}{% url 'EditPage' %}{% endif %}"><div>X</div></a></li>
+                        {% endif %}
+                    {% endif %}
+            {% endif %}
+        </ul>
+    </div>
+</div>

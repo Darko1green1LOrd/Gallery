@@ -1,0 +1,1075 @@
+:root {
+    --bgcolor: #e0f0f0;
+    --bg-bottom-panel: white;
+    --border-bottom-panel: #9d9d9d;
+    --primary-text: #013370;
+    --secondary-color: #ffffff;
+    --loginbtn-one: #4282a2;
+    --loginbtn-two: #5999b9;
+    --loginbtn-three: #304172;
+    --loginbtn-four: #0e4e6e;
+    --loginclr: #4080a0;
+    --graytext: #2f2f2f;
+    --sm-border-top: #7cbcdc;
+    --sm-border-bottom: #001e3e;
+    --sm-colone: var(--loginclr);
+    --sm-coltwo: var(--loginbtn-four);
+    --sm-colthree: #002444;
+    --sm-colfour: #002e4e;
+    --sm-textshadow: rgba(0,0,0,.3);
+    --dropcon-bor: #555;
+    --dropcon-bor-hov: #111;
+    --dropcon-t-hov: #222;
+    --dropcon-col: #444;
+    --dropcon-col-hov: #eee;
+    --droptext: #444;
+    --droptext-hov: #222;
+    --uploadbtn: #084cdf;
+    --uploadbtn-hov: #0d45a5;
+    --delprimtext: #700103;
+    --delbtn-one: #a04042;
+    --delbtn-two: #6e0e0f;
+    --delbtn-three: #440001;
+    --delbtn-four: #4e0001;
+    --delbtn-bor: #dc7c7e;
+    --delelem-bg: #f0e0e1;
+    --movprimtext: #1d7001;
+    --movbtn-one: #58a040;
+    --movbtn-two: #266e0e;
+    --movbtn-three: #114400;
+    --movbtn-four: #144e00;
+    --movbtn-bor: #94dc7c;
+    --movelem-bg: #e4f0e0;
+    --datprimtext: #706701;
+    --datbtn-one: #a09840;
+    --datbtn-two: #6e660e;
+    --datbtn-three: #443e00;
+    --datbtn-four: #4e4800;
+    --datbtn-bor: #dcd47c;
+    --datelem-bg: #f0efe0;
+    --disbtn-one: #7d6e6e;
+    --disbtn-two: #504d4d;
+    --disbtn-three: #282222;
+    --disbtn-four: #211d1d;
+    --disbtn-bor: #b3a3a3;
+}
+
+
+
+/*
+-------
+Main stuff
+-------
+*/
+* {
+    font-family: Arial, sans-serif;
+}
+
+html {
+    background: var(--primary-text);
+    height: 100%;
+}
+
+html, body {
+    margin: 0;
+}
+
+body {
+    background: var(--bgcolor);
+    position: absolute;
+    top: 6px;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.main-panel {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 15px;
+}
+
+.t-text {
+    font-family: Arial, sans-serif;
+}
+
+*:focus {
+    outline: none;
+}
+
+
+
+.alert {
+  position: relative;
+  top: 10;
+  left: 0;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  margin: 10px;
+  line-height: 1.8;
+  border-radius: 5px;
+  cursor: hand;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-weight: 400;
+}
+
+.alertCheckbox {
+  display: none;
+}
+
+:checked + .alert {
+  display: none;
+}
+
+.alertText {
+  display: table;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 16px;
+}
+
+.alertClose {
+  float: right;
+  padding-top: 5px;
+  font-size: 10px;
+}
+
+.clear {
+  clear: both;
+}
+
+.info {
+  background-color: #EEE;
+  border: 1px solid #DDD;
+  color: #999;
+}
+
+.success {
+  background-color: #EFE;
+  border: 1px solid #DED;
+  color: #9A9;
+}
+
+.notice {
+  background-color: #EFF;
+  border: 1px solid #DEE;
+  color: #9AA;
+}
+
+.warning {
+  background-color: #FDF7DF;
+  border: 1px solid #FEEC6F;
+  color: #C9971C;
+}
+
+.error {
+  background-color: #FEE;
+  border: 1px solid #EDD;
+  color: #A66;
+}
+
+
+/*
+-------
+Top Panel
+-------
+*/
+
+/*Logo*/
+#site-logo {
+    max-height: 97px;
+    float: left;
+}
+
+.logo-panel {
+    width: fit-content;
+    display: inline-block;
+}
+
+.logo-text {
+    font-size: 20px;
+    color: var(--primary-text);
+    padding-top: 6px;
+    font-family: Oswald, sans-serif;
+    max-height: 5.2em;
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 10px;
+}
+
+/*Buttons 1*/
+.btnsone-panel {
+    float: right;
+    margin-right: 0px;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.login-btn, .logout-btn {
+    display: inline-block;
+}
+
+.login-btn > a, .logout-btn > a{
+    color: var(--secondary-color);
+    width: 100px;
+    padding: 8px;
+    text-align: center;
+    height: 19px;
+    font-size: 15px;
+    text-transform: uppercase;
+    background-image: none;
+    text-indent: 0px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: rgb(16,80,112);
+    background-color: rgba(16,80,112,.2);
+    position: relative;
+    z-index: 2;
+    width: 36px;
+    height: 35px;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    text-indent: -9999px;
+    -moz-border-radius: 0 0 2px 2px;
+    border-radius: 0 0 2px 2px;
+}
+
+.login-btn.sel > a, .logout-btn.sel > a {
+  background-color: var(--loginbtn-four);
+  border-color: var(--loginbtn-four);
+}
+
+#logged-user {
+    color: var(--loginbtn-three);
+    background: var(--secondary-color);
+    padding: 4px;
+    border-radius: 6px;
+    border: 2px solid var(--loginbtn-one);
+}
+
+
+/*
+-------
+Bottom Panel
+-------
+*/
+
+.bottom-panel {
+    min-height: 300px;
+    background: var(--secondary-color);
+    border: 1px solid var(--border-bottom-panel);
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/*Login Field*/
+.LoginText > h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    color: var(--loginclr);
+    font-size: 22px;
+}
+
+#loginfield {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#loginfield > div {
+    text-align: right;
+    margin: 10px
+}
+
+#loginfield > input[type="submit"] {
+    border-color: var(--loginbtn-one);
+    background-color: var(--loginbtn-two);
+    color: var(--secondary-color);
+    text-shadow: 0px 0px 0 var(--secondary-color);
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    padding: .35em 1.7em .35em;
+    font-size: 15px;
+    -webkit-transition: all .25s linear;
+    -moz-transition: all .25s linear;
+    -ms-transition: all .25s linear;
+    -o-transition: all .25s linear;
+    transition: all .25s linear;
+    display: inline-block;
+    margin-bottom: 0px;
+    outline: none;
+    border-width: 0 1px 1px 0;
+    border-style: solid;
+    text-align: center;
+    text-decoration: none !important;
+    font-style: normal !important;
+    cursor: pointer;
+    font-family: Arial;
+    line-height: 1.4;
+}
+
+#loginfield > input[type="submit"]:hover {
+    border-color: var(--loginbtn-one);
+    background-color: var(--loginbtn-one);
+    text-shadow: 1px 1px 0 var(--loginbtn-three);
+}
+
+#loginfield > div > a {
+    font-family: inherit;
+    text-align: right;
+    color: var(--graytext);
+    font-weight: 400;
+    font-size: 13px;
+}
+
+#loginfield > div > input {
+    width: 150px;
+    padding: 7px 5px;
+    font-family: inherit;
+    font-size: inherit;
+    text-align: left;
+    color: var(--graytext);
+    font-weight: 400;
+    font-size: 13px;
+}
+
+#errormsg_login {
+    color: red;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+#auth_texts {
+    text-align: center;
+}
+
+/*
+-------
+Selector Buttons
+-------
+*/
+
+#selectormenu > ul > li {
+    margin-left: 0;
+    display: inline-block;
+    text-align: left;
+}
+
+#selectormenu > ul {
+    display: block;
+    list-style-type: none;
+}
+
+#selectormenu > ul > li > a {
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    border-top: 1px solid var(--sm-border-top);
+    border-bottom: 1px solid var(--sm-bottom-top);
+    background: -moz-linear-gradient(top, var(--sm-colone) 0%, var(--sm-coltwo) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,var(--sm-colone)), color-stop(100%,var(--sm-coltwo)));
+    background: -webkit-linear-gradient(top, var(--sm-colone) 0%,var(--sm-coltwo) 100%);
+    background: -o-linear-gradient(top, var(--sm-colone) 0%,var(--sm-coltwo) 100%);
+    background: -ms-linear-gradient(top, var(--sm-colone) 0%,var(--sm-coltwo) 100%);
+    background: linear-gradient(to bottom, var(--sm-colone) 0%,var(--sm-coltwo) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=var(--sm-colone), endColorstr=var(--sm-coltwo),GradientType=0 );
+    display: block;
+    text-decoration: none;
+    color: var(--secondary-color);
+    text-shadow: 1px 1px 0 var(--sm-textshadow);
+    font-weight: 400;
+}
+
+#selectormenu > ul > li:hover > a, #selectormenu > ul > li.selected > a {
+    background: -moz-linear-gradient(top, var(--sm-colthree) 0%, var(--sm-colfour) 100%) !important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,var(--sm-colthree)), color-stop(100%,var(--sm-colfour))) !important;
+    background: -webkit-linear-gradient(top, var(--sm-colthree) 0%,var(--sm-colfour) 100%) !important;
+    background: -o-linear-gradient(top, var(--sm-colthree) 0%,var(--sm-colfour) 100%) !important;
+    background: -ms-linear-gradient(top, var(--sm-colthree) 0%,var(--sm-colfour) 100%) !important;
+    background: linear-gradient(to bottom, var(--sm-colthree) 0%,var(--sm-colfour) 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=var(--sm-colthree), endColorstr=var(--sm-colfour),GradientType=0 ) !important;
+}
+
+#selectormenu > ul > li > a > div {
+    font-family: 'Oswald', sans-serif;
+    padding: 4px 20px;
+}
+
+#selectormenu {
+    width: fit-content;
+    margin-left: auto;
+}
+
+#bigtext {
+    margin: auto;
+    margin-top: 6%;
+}
+
+#bigtext > p {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 8%;
+}
+
+
+/*
+-------
+Albums View
+-------
+*/
+
+#albums,.album_imgs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+#albums > a > .album_disp {
+    display: block;
+    background: var(--bgcolor);
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    border: 2px solid var(--sm-border-top);
+    min-height: 240px;
+    width: 250px;
+    -webkit-transition: background .25s, border-color .25s;
+    -moz-transition: background .25s, border-color .25s;
+    -ms-transition: background .25s, border-color .25s;
+    -o-transition: background .25s, border-color .25s;
+    transition: background .25s, border-color .25s;
+}
+
+#albums > a > .album_disp:hover {
+    background: var(--sm-border-top);
+    border-color: var(--primary-text);
+    -webkit-transition: background .25s, border-color .25s;
+    -moz-transition: background .25s, border-color .25s;
+    -ms-transition: background .25s, border-color .25s;
+    -o-transition: background .25s, border-color .25s;
+    transition: background .25s, border-color .25s;
+}
+
+#albums > a > .album_disp > .img_thumbnail {
+    display: block;
+    max-width: 230px;
+    max-height: 130px;
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#albums > a > .album_disp > .album_title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--primary-text);
+    margin-top: 0;
+    margin-bottom: 0;
+    -webkit-transition: color .25s;
+    -moz-transition: color .25s;
+    -ms-transition: color .25s;
+    -o-transition: color .25s;
+    transition: color .25s;
+}
+
+#albums > a > .album_disp:hover > .album_title {
+    color: var(--bg-bottom-panel);
+    -webkit-transition: color .25s;
+    -moz-transition: color .25s;
+    -ms-transition: color .25s;
+    -o-transition: color .25s;
+    transition: color .25s;
+}
+
+#albums > a > .album_disp > p {
+    color: var(--sm-colone);
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 2px;
+    margin-bottom: 20px;
+    -webkit-transition: color .25s;
+    -moz-transition: color .25s;
+    -ms-transition: color .25s;
+    -o-transition: color .25s;
+    transition: color .25s;
+}
+
+#albums > a > .album_disp:hover > p {
+    color: var(--bgcolor);
+    -webkit-transition: color .25s;
+    -moz-transition: color .25s;
+    -ms-transition: color .25s;
+    -o-transition: color .25s;
+    transition: color .25s;
+}
+
+#albums > a {
+    text-decoration: none;
+    overflow-wrap: break-word;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+
+/*
+-------
+Album View
+-------
+*/
+
+#album-images {
+    text-align: center;
+}
+
+#album-images > p:nth-child(1) {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--primary-text);
+}
+
+#album-images > p:nth-child(2) {
+    color: var(--sm-colone);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.album_imgs > a > .img_disp > .img_showcase {
+    display: block;
+    max-width: 330px;
+    max-height: 230px;
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.album_imgs > a > .img_disp {
+    display: block;
+    background: var(--bgcolor);
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    border: 2px solid var(--sm-border-top);
+    height: fit-content;
+    width: fit-content;
+    -webkit-transition: background .25s, border-color .25s;
+    -moz-transition: background .25s, border-color .25s;
+    -ms-transition: background .25s, border-color .25s;
+    -o-transition: background .25s, border-color .25s;
+    transition: background .25s, border-color .25s;
+    text-decoration: none;
+    overflow-wrap: break-word;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.album_imgs > a > .img_disp:hover {
+    background: var(--sm-border-top);
+    border-color: var(--primary-text);
+    -webkit-transition: background .25s, border-color .25s;
+    -moz-transition: background .25s, border-color .25s;
+    -ms-transition: background .25s, border-color .25s;
+    -o-transition: background .25s, border-color .25s;
+    transition: background .25s, border-color .25s;
+}
+
+.img_disp > p {
+    color: var(--sm-colone);
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.img_disp:hover > p {
+    color: var(--secondary-color);
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+
+/*
+-------
+Add Album
+-------
+*/
+
+.galname {
+    font-family: 'Oswald', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 20px !important;
+    color: var(--primary-text) !important;
+}
+
+#add-album, #add-album-imgs {
+    text-align: center;
+}
+
+#add-album > h1, #add-album-imgs > h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    color: var(--loginclr);
+    font-size: 30px;
+}
+
+.editor-form {
+    background: var(--sm-border-top);
+    border-radius: 20px;
+    width: fit-content;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.editor-form > div {
+    display: block;
+    margin-bottom: 15px;
+    background: var(--loginbtn-one);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.editor-form > div > label {
+    font-size: 20px;
+    text-align: left;
+    color: var(--bg-bottom-panel);
+}
+
+.editor-form > div > * {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.editor-form > div > input {
+    background: var(--bgcolor);
+    border-radius: 5px;
+    padding: 0.25em 0.5em;
+    width: 60vw;
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.editor-form > div > select {
+    background: var(--bgcolor);
+    border-radius: 5px;
+    padding: 0.25em 0.5em;
+    width: 61vw;
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.editor-form > button[type="submit"] {
+    padding: 10px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    border: 1px solid var(--sm-border-top);
+    background: -moz-linear-gradient(top, var(--sm-colone) 0%, var(--sm-coltwo) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,var(--sm-colone)), color-stop(100%,var(--sm-coltwo)));
+    background: -webkit-linear-gradient(top, var(--sm-colone) 0%,var(--sm-coltwo) 100%);
+    background: -o-linear-gradient(top, var(--sm-colone) 0%,var(--sm-coltwo) 100%);
+    background: -ms-linear-gradient(top, var(--sm-colone) 0%,var(--sm-coltwo) 100%);
+    background: linear-gradient(to bottom, var(--sm-colone) 0%,var(--sm-coltwo) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=var(--sm-colone), endColorstr=var(--sm-coltwo),GradientType=0 );
+    text-decoration: none;
+    color: var(--secondary-color);
+    text-shadow: 1px 1px 0 var(--sm-textshadow);
+    font-weight: 400;
+    font-family: 'Oswald', sans-serif;
+    padding: 4px 20px;
+    cursor: pointer;
+    font-size: 17px;
+    margin-top: 5px;
+}
+
+.editor-form > button[type="submit"]:hover {
+    background: -moz-linear-gradient(top, var(--sm-colthree) 0%, var(--sm-colfour) 100%) !important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,var(--sm-colthree)), color-stop(100%,var(--sm-colfour))) !important;
+    background: -webkit-linear-gradient(top, var(--sm-colthree) 0%,var(--sm-colfour) 100%) !important;
+    background: -o-linear-gradient(top, var(--sm-colthree) 0%,var(--sm-colfour) 100%) !important;
+    background: -ms-linear-gradient(top, var(--sm-colthree) 0%,var(--sm-colfour) 100%) !important;
+    background: linear-gradient(to bottom, var(--sm-colthree) 0%,var(--sm-colfour) 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=var(--sm-colthree), endColorstr=var(--sm-colfour),GradientType=0 ) !important;
+}
+
+.drop-container {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px dashed var(--dropcon-bor);
+    color: var(--dropcon-col);
+    cursor: pointer;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+    background: var(--bgcolor);
+}
+
+.drop-container:hover {
+    background: var(--dropcon-col-hov);
+    border-color: var(--dropcon-bor-hov);
+}
+
+.drop-container:hover .drop-title {
+    color: var(--dropcon-t-hov);
+}
+
+.drop-container.drag-active {
+    background: var(--dropcon-col-hov);
+    border-color: var(--dropcon-bor-hov);
+}
+
+.drop-container.drag-active .drop-title {
+    color: var(--dropcon-t-hov);
+}
+
+
+.drop-title {
+    color: var(--dropcon-col);
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    transition: color .2s ease-in-out;
+}
+
+input[type=file]::file-selector-button {
+    margin-right: 20px;
+    border: none;
+    background: var(--uploadbtn);
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: var(--secondary-color);
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+}
+
+input[type=file]::file-selector-button:hover {
+    background: var(--uploadbtn-hov);
+}
+
+
+/*
+-------
+Selection Mode
+-------
+*/
+
+.selmode > h1 {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    color: var(--loginclr);
+    font-size: 30px;
+}
+
+.selmode > #albums > a > .album_disp {
+    cursor: pointer;
+}
+
+.selmode > #album-images > .album_imgs > a > .img_disp {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.selmode > .editor-form > div > button {
+    padding: 10px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    border: 1px solid var(--sm-border-top);
+    background: -moz-linear-gradient(top, var(--sm-colone) 0%, var(--sm-coltwo) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,var(--sm-colone)), color-stop(100%,var(--sm-coltwo)));
+    background: -webkit-linear-gradient(top, var(--sm-colone) 0%,var(--sm-coltwo) 100%);
+    background: -o-linear-gradient(top, var(--sm-colone) 0%,var(--sm-coltwo) 100%);
+    background: -ms-linear-gradient(top, var(--sm-colone) 0%,var(--sm-coltwo) 100%);
+    background: linear-gradient(to bottom, var(--sm-colone) 0%,var(--sm-coltwo) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=var(--sm-colone), endColorstr=var(--sm-coltwo),GradientType=0 );
+    text-decoration: none;
+    color: var(--secondary-color);
+    text-shadow: 1px 1px 0 var(--sm-textshadow);
+    font-weight: 400;
+    font-family: 'Oswald', sans-serif;
+    padding: 4px 20px;
+    cursor: pointer;
+    font-size: 17px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.selmode > .editor-form > div > button:hover {
+    background: -moz-linear-gradient(top, var(--sm-colthree) 0%, var(--sm-colfour) 100%) !important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,var(--sm-colthree)), color-stop(100%,var(--sm-colfour))) !important;
+    background: -webkit-linear-gradient(top, var(--sm-colthree) 0%,var(--sm-colfour) 100%) !important;
+    background: -o-linear-gradient(top, var(--sm-colthree) 0%,var(--sm-colfour) 100%) !important;
+    background: -ms-linear-gradient(top, var(--sm-colthree) 0%,var(--sm-colfour) 100%) !important;
+    background: linear-gradient(to bottom, var(--sm-colthree) 0%,var(--sm-colfour) 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=var(--sm-colthree), endColorstr=var(--sm-colfour),GradientType=0 ) !important;
+}
+
+.selmode > .editor-form > div > .delbtn {
+    border: 1px solid var(--delbtn-bor);
+    background: -moz-linear-gradient(top, var(--delbtn-one) 0%, var(--delbtn-two) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,var(--delbtn-one)), color-stop(100%,var(--delbtn-two)));
+    background: -webkit-linear-gradient(top, var(--delbtn-one) 0%,var(--delbtn-two) 100%);
+    background: -o-linear-gradient(top, var(--delbtn-one) 0%,var(--delbtn-two) 100%);
+    background: -ms-linear-gradient(top, var(--delbtn-one) 0%,var(--delbtn-two) 100%);
+    background: linear-gradient(to bottom, var(--delbtn-one) 0%,var(--delbtn-two) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=var(--delbtn-one), endColorstr=var(--delbtn-two),GradientType=0 );
+}
+
+.selmode > .editor-form > div > .delbtn:hover {
+    background: -moz-linear-gradient(top, var(--delbtn-three) 0%, var(--delbtn-four) 100%) !important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,var(--delbtn-four)), color-stop(100%,var(--delbtn-four))) !important;
+    background: -webkit-linear-gradient(top, var(--delbtn-three) 0%,var(--delbtn-four) 100%) !important;
+    background: -o-linear-gradient(top, var(--delbtn-three) 0%,var(--delbtn-four) 100%) !important;
+    background: -ms-linear-gradient(top, var(--delbtn-three) 0%,var(--delbtn-four) 100%) !important;
+    background: linear-gradient(to bottom, var(--delbtn-three) 0%,var(--delbtn-four) 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=var(--delbtn-three), endColorstr=var(--delbtn-four),GradientType=0 ) !important;
+}
+
+.selmode > .editor-form > div > .movbtn {
+    border: 1px solid var(--movbtn-bor);
+    background: -moz-linear-gradient(top, var(--movbtn-one) 0%, var(--movbtn-two) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,var(--movbtn-one)), color-stop(100%,var(--movbtn-two)));
+    background: -webkit-linear-gradient(top, var(--movbtn-one) 0%,var(--movbtn-two) 100%);
+    background: -o-linear-gradient(top, var(--movbtn-one) 0%,var(--movbtn-two) 100%);
+    background: -ms-linear-gradient(top, var(--movbtn-one) 0%,var(--movbtn-two) 100%);
+    background: linear-gradient(to bottom, var(--movbtn-one) 0%,var(--movbtn-two) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=var(--movbtn-one), endColorstr=var(--movbtn-two),GradientType=0 );
+}
+
+.selmode > .editor-form > div > .movbtn:hover {
+    background: -moz-linear-gradient(top, var(--movbtn-three) 0%, var(--movbtn-four) 100%) !important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,var(--movbtn-four)), color-stop(100%,var(--movbtn-four))) !important;
+    background: -webkit-linear-gradient(top, var(--movbtn-three) 0%,var(--movbtn-four) 100%) !important;
+    background: -o-linear-gradient(top, var(--movbtn-three) 0%,var(--movbtn-four) 100%) !important;
+    background: -ms-linear-gradient(top, var(--movbtn-three) 0%,var(--movbtn-four) 100%) !important;
+    background: linear-gradient(to bottom, var(--movbtn-three) 0%,var(--movbtn-four) 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=var(--movbtn-three), endColorstr=var(--movbtn-four),GradientType=0 ) !important;
+}
+
+.selmode > .editor-form > div > .datbtn {
+    border: 1px solid var(--datbtn-bor);
+    background: -moz-linear-gradient(top, var(--datbtn-one) 0%, var(--datbtn-two) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,var(--datbtn-one)), color-stop(100%,var(--datbtn-two)));
+    background: -webkit-linear-gradient(top, var(--datbtn-one) 0%,var(--datbtn-two) 100%);
+    background: -o-linear-gradient(top, var(--datbtn-one) 0%,var(--datbtn-two) 100%);
+    background: -ms-linear-gradient(top, var(--datbtn-one) 0%,var(--datbtn-two) 100%);
+    background: linear-gradient(to bottom, var(--datbtn-one) 0%,var(--datbtn-two) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=var(--datbtn-one), endColorstr=var(--datbtn-two),GradientType=0 );
+}
+
+.selmode > .editor-form > div > .datbtn:hover {
+    background: -moz-linear-gradient(top, var(--datbtn-three) 0%, var(--datbtn-four) 100%) !important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,var(--datbtn-four)), color-stop(100%,var(--datbtn-four))) !important;
+    background: -webkit-linear-gradient(top, var(--datbtn-three) 0%,var(--datbtn-four) 100%) !important;
+    background: -o-linear-gradient(top, var(--datbtn-three) 0%,var(--datbtn-four) 100%) !important;
+    background: -ms-linear-gradient(top, var(--datbtn-three) 0%,var(--datbtn-four) 100%) !important;
+    background: linear-gradient(to bottom, var(--datbtn-three) 0%,var(--datbtn-four) 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=var(--datbtn-three), endColorstr=var(--datbtn-four),GradientType=0 ) !important;
+}
+
+.confirm > a {
+    color: var(--bg-bottom-panel);
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+}
+
+.selmode > .editor-form > div > button:disabled {
+    border: 1px solid var(--disbtn-bor);
+    background: -moz-linear-gradient(top, var(--disbtn-one) 0%, var(--disbtn-two) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,var(--disbtn-one)), color-stop(100%,var(--disbtn-two)));
+    background: -webkit-linear-gradient(top, var(--disbtn-one) 0%,var(--disbtn-two) 100%);
+    background: -o-linear-gradient(top, var(--disbtn-one) 0%,var(--disbtn-two) 100%);
+    background: -ms-linear-gradient(top, var(--disbtn-one) 0%,var(--disbtn-two) 100%);
+    background: linear-gradient(to bottom, var(--disbtn-one) 0%,var(--disbtn-two) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=var(--disbtn-one), endColorstr=var(--disbtn-two),GradientType=0 );
+    pointer-events: none;
+}
+
+.selmode > #albums > a > .delsel {
+    background: var(--delelem-bg);
+    border-color: var(--delbtn-bor);
+}
+
+.selmode > #albums > a > .delsel > .album_title {
+    color: var(--delprimtext);
+}
+
+.selmode > #albums > a > .delsel > p {
+    color: var(--delbtn-one);
+}
+
+.selmode > #albums > a > .delsel > .album_title, .selmode > #albums > a > .delsel > p {
+    font-weight: 1000;
+}
+
+.selmode > #albums > a > .delsel:hover {
+    background: var(--delbtn-bor);
+    border-color: var(--delprimtext);
+}
+
+.selmode > #albums > a > .delsel:hover > .album_title, .selmode > #albums > a > .delsel:hover > p {
+    color: var(--bgcolor);
+    text-shadow: -1px -1px 0 var(--delprimtext), 1px -1px 0 var(--delprimtext), -1px 1px 0 var(--delprimtext), 1px 1px 0 var(--delprimtext);
+}
+
+.selmode > #albums > a > .movsel {
+    background: var(--movelem-bg);
+    border-color: var(--movbtn-bor);
+}
+
+.selmode > #albums > a > .movsel > .album_title {
+    color: var(--movprimtext);
+}
+
+.selmode > #albums > a > .movsel > p {
+    color: var(--movbtn-one);
+}
+
+.selmode > #albums > a > .movsel > .album_title, .selmode > #albums > a > .movsel > p {
+    font-weight: 1000;
+}
+
+.selmode > #albums > a > .movsel:hover {
+    background: var(--movbtn-bor);
+    border-color: var(--movprimtext);
+}
+
+.selmode > #albums > a > .movsel:hover > .album_title, .selmode > #albums > a > .movsel:hover > p {
+    color: var(--bgcolor);
+    text-shadow: -1px -1px 0 var(--movprimtext), 1px -1px 0 var(--movprimtext), -1px 1px 0 var(--movprimtext), 1px 1px 0 var(--movprimtext);
+}
+
+.selmode > #albums > a > .datsel {
+    background: var(--datelem-bg);
+    border-color: var(--datbtn-bor);
+}
+
+.selmode > #albums > a > .datsel > .album_title {
+    color: var(--datprimtext);
+}
+
+.selmode > #albums > a > .datsel > p {
+    color: var(--datbtn-one);
+}
+
+.selmode > #albums > a > .datsel > .album_title, .selmode > #albums > a > .datsel > p {
+    font-weight: 1000;
+}
+
+.selmode > #albums > a > .datsel:hover {
+    background: var(--datbtn-bor);
+    border-color: var(--datprimtext);
+}
+
+.selmode > #albums > a > .datsel:hover > .album_title, .selmode > #albums > a > .datsel:hover > p {
+    color: var(--bgcolor);
+    text-shadow: -1px -1px 0 var(--datprimtext), 1px -1px 0 var(--datprimtext), -1px 1px 0 var(--datprimtext), 1px 1px 0 var(--datprimtext);
+}
+
+.selmode > #album-images > .album_imgs > a > .delsel {
+    background: var(--delelem-bg);
+    border-color: var(--delbtn-bor);
+}
+
+.selmode > #album-images > .album_imgs > a > .delsel > p {
+    color: var(--delbtn-one);
+    font-weight: 1000;
+}
+
+.selmode > #album-images > .album_imgs > a > .delsel:hover {
+    background: var(--delbtn-bor);
+    border-color: var(--delprimtext);
+}
+
+.selmode > #album-images > .album_imgs > a > .delsel:hover > p {
+    color: var(--bgcolor);
+    text-shadow: -1px -1px 0 var(--delprimtext), 1px -1px 0 var(--delprimtext), -1px 1px 0 var(--delprimtext), 1px 1px 0 var(--delprimtext);
+}
+
+.selmode > #album-images > .album_imgs > a > .movsel {
+    background: var(--movelem-bg);
+    border-color: var(--movbtn-bor);
+}
+
+.selmode > #album-images > .album_imgs > a > .movsel > p {
+    color: var(--movbtn-one);
+    font-weight: 1000;
+}
+
+.selmode > #album-images > .album_imgs > a > .movsel:hover {
+    background: var(--movbtn-bor);
+    border-color: var(--movprimtext);
+}
+
+.selmode > #album-images > .album_imgs > a > .movsel:hover > p {
+    color: var(--bgcolor);
+    text-shadow: -1px -1px 0 var(--movprimtext), 1px -1px 0 var(--movprimtext), -1px 1px 0 var(--movprimtext), 1px 1px 0 var(--movprimtext);
+}
+
+.selmode > #album-images > .album_imgs > a > .datsel {
+    background: var(--datelem-bg);
+    border-color: var(--datbtn-bor);
+}
+
+.selmode > #album-images > .album_imgs > a > .datsel > p {
+    color: var(--datbtn-one);
+    font-weight: 1000;
+}
+
+.selmode > #album-images > .album_imgs > a > .datsel:hover {
+    background: var(--datbtn-bor);
+    border-color: var(--datprimtext);
+}
+
+.selmode > #album-images > .album_imgs > a > .datsel:hover > p {
+    color: var(--bgcolor);
+    text-shadow: -1px -1px 0 var(--datprimtext), 1px -1px 0 var(--datprimtext), -1px 1px 0 var(--datprimtext), 1px 1px 0 var(--datprimtext);
+}

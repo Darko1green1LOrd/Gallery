@@ -1,0 +1,17 @@
+{% load static %}
+<div class="photos-photoList">
+    <div class="photos-photoList-la" style="display: none;">
+        <i class="material-icons">chevron_left</i>
+    </div>
+    <div class="photos-photoList-ra">
+        <i class="material-icons">chevron_right</i>
+    </div>
+    <div class="photos-photoList-container" style="width: 1728px;">
+        <div class="photos-photoList-scroller" style="left: 0px; width: 1836px;">
+            {% for img in album_data.images%}<div class="photos-photoThumb" data-index="{{forloop.counter0}}">
+                <img alt="Photo {{forloop.counter}}" src="{{img.thumb.url}}" data-hdsrc="{{img.img.url}}" data-time="{{img.created_at}}">
+                <div></div>
+            </div>{% empty %}{% endfor %}
+        </div>
+    </div>
+</div>

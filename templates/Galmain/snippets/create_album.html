@@ -1,0 +1,28 @@
+{% load static %}
+{% for key, value in albums_data.items %}
+    {% if onpage == 0%}
+    <a href="{% url 'ViewAlbum' key.id%}">
+    {% elif onpage == 3 %}
+    <a href="{% url 'EditAlbum' key.id%}">
+    {% elif onpage == 6 %}
+    <a>
+    {% endif %}
+        <div class="album_disp">
+            <p class="album_title">{{key.name}}</p>
+            {% for keytwo, valuetwo in value.items%}
+                {% if keytwo == "thumbnailimg" %}
+                    <img class="img_thumbnail" src="{{valuetwo.url}}">
+                {% elif keytwo == "photoamount" %}
+                    <p class="imgamount" data-amount={{valuetwo}}>Photos: {{valuetwo}}</p>
+                {% else %}
+                    <p>{{valuetwo}}</p>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </a>
+{% empty %}
+    {% if onpage == 0%}
+        <div id="bigtext"><p>No albums yet.</p></div>
+    {% endif %}
+{% endfor %}
+
